@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POP</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .wrapper{
+            display: inline-block;
+            position: relative;
+            text-align: center;
+        }
+        .wrapper>.pop{
+            border: 1px solid rgba(210, 210, 210, 0.5);
+            position: absolute;
+            left: 100%;
+            top: 0;
+            white-space: nowrap;
+            padding:10px 20px;
+            margin-left: 10px;
+            border-radius: 15px;
+        }
+        .wrapper>.clickMe{
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper" class="wrapper">
+        <button class="clickMe" id="clickMe">点一下</button>
+        <div class="pop hidden" id="pop">浮层</div>
+    </div>
+    <script>
+        clickMe.addEventListener('click',function(){
+            pop.classList.remove('hidden')
+        })
+        wrapper.addEventListener('click',function(e){
+            e.stopPropagation()
+        })
+        document.addEventListener('click',function(){
+            pop.classList.add('hidden')
+        })
+    </script>
+</body>
+</html>
