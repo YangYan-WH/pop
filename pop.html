@@ -43,8 +43,13 @@
         <div class="pop hidden" id="pop">浮层</div>
     </div>
     <script>
-        clickMe.addEventListener('click',function(){
-            pop.classList.remove('hidden')
+        var pop = document.getElementById('pop')
+        clickMe.addEventListener('click',function(e){
+            if(pop.className.indexOf('hidden') > 0){
+                pop.classList.remove('hidden')
+            }else{
+                pop.classList.add('hidden')
+            }          
         })
         wrapper.addEventListener('click',function(e){
             e.stopPropagation()
